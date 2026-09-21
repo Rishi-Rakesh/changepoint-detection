@@ -33,6 +33,21 @@ changepoint-detection/
     ├── README.md
     └── your_dataset.csv
 ```
+## Archive format
+
+The dataset is stored as `set2.7z`. The archive is not password-protected
+and contains the dataset required by the application. Extract the archive
+before running the application unless automatic extraction is implemented
+in `app.py`.
+
+To extract it using Python:
+
+```python
+import py7zr
+
+with py7zr.SevenZipFile("data/set2.7z", mode="r") as archive:
+    archive.extractall(path="data/")
+```
 
 ## Running in Google Colab
 
